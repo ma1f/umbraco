@@ -1,9 +1,12 @@
 ## Reusable umbraco functionality
 
 ### Property Editors
-* Open Graph Editor
-* Call To Action Editor
-* Url Picker
+* [Open Graph Editor](/master/App_Plugins/OpenGraphTags)
+* [Call To Action Editor](/master/App_Plugins/CTAEditor)
+* [Url Picker](/master/App_Plugins/UrlPicker)
+
+### Extension Methods
+* [Umbraco extensions](/master/App_Code/Extensions/UmbracoExtensions.cs) - GetJson, GetJson<T>, GetJsonList<T>, GetMedia, GetMediaList, GetContent, GetContentList
 
 #### Open graph editor
 adding open graph tags to pages, handy if you want to stay up with the play in social media sharing of content.
