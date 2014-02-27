@@ -17,7 +17,7 @@ Usage
   <meta property="@tag.Name" content="@tag.Content" />
 }
 ```
-![ScreenShot](https://raw.github.com/ma1f/umbraco/master/opengrapheditor.png)
+![ScreenShot](/opengrapheditor.png)
 
 #### Call to action editor
 For adding multiple 'promo' or 'call to action' blocks to a page, consisting of a thumbnail, heading, description and url
@@ -32,7 +32,7 @@ Usage
   </a>
 }
 ```
-![ScreenShot](https://raw.github.com/ma1f/umbraco/master/cta-editor.png)
+![ScreenShot](/cta-editor.png)
 
 #### Url Picker - for all your single url picking needs
 Sometimes you just need one url.
@@ -44,7 +44,7 @@ Usage
 }
 <a href="@(cta.IsInternal ? Umbraco.Url(cta.InternalLink, UrlProviderMode.Relative) : cta.ExternalUrl)" class="btn">@cta.Title</a>
 ```
-![ScreenShot](https://raw.github.com/ma1f/umbraco/master/url-picker.png)
+![ScreenShot](/url-picker.png)
 
 
 
