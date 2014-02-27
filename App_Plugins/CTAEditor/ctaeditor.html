@@ -1,0 +1,50 @@
+<div ng-controller="CTAEditor" class="umb-editor umb-mediapicker cta-editor">
+  <table>
+    <tr ng-repeat="row in model.value">
+      <td>
+        <ul class="umb-sortable-thumbnails" ng-if="row.image">
+          <li>
+            <img ng-src="{{row.image.thumbnail}}" alt="" ng-show="row.image.src" class="cta-thumb" />
+            <span class="icon-holder" ng-hide="row.image.src">
+              <i class="icon {{row.image.icon}} large"></i>
+              <small>{{row.image.name}}</small>
+            </span>
+            <a class="picked-image" ng-click="removeMedia(row)" href prevent-default><i class="icon icon-delete"></i></a>
+          </li>
+        </ul>
+        <ul class="umb-sortable-thumbnails" ng-if="!row.image">
+          <li>
+            <a href class="add-link" ng-click="selectMedia(row)" prevent-default><i class="icon icon-add large"></i></a>
+          </li>
+        </ul>
+      </td>
+      <td>
+        <ul class="nav nav-stacked">
+          <li>
+            <input type="text" ng-model="row.heading" placeholder="title" required /></li>
+          <li>
+            <textarea ng-model="row.synopsis" placeholder="description" required></textarea></li>
+          <li>
+            <div ng-show="!row.isInternal">
+              <small>link to <a href ng-click="switch(row)" prevent-default>page</a> / <a href><u>url</u></a></small>
+              <input type="text" ng-model="row.externalUrl" />
+            </div>
+            <div ng-show="row.isInternal">
+              <small>link to <a href><u>page</u></a> / <a href ng-click="switch(row)" prevent-default>url</a></small><br />
+              <span ng-bind="row.internalName" ng-show="row.internalLink"></span>
+              <a href ng-click="removeContent(row)" ng-show="row.internalLink" prevent-default><i class="icon icon-delete"></i></a>
+              <a href ng-click="selectContent(row)" ng-show="!row.internalLink" prevent-default><i class="icon icon-out"></i> select page</a>
+            </div>
+          </li>
+          <li>
+            <input id="{{model.alias}}-newwindow" type="checkbox" ng-model="row.newWindow" class="quote-editor-cite" />
+            <label for="{{model.alias}}-newwindow"><small>new window?</small></label></li>
+        </ul>
+      </td>
+      <td>
+        <i class="icon icon-delete red hover-show" ng-click="remove($index)"></i>
+      </td>
+    </tr>
+  </table>
+  <i class="icon icon-add blue" ng-click="add()"></i>
+</div>

@@ -1,0 +1,10 @@
+.url-picker{}
+  .url-picker table{ width:100%; }
+    .url-picker td{ padding:10px; vertical-align:bottom; }
+
+  .url-picker input{ display: block; }
+  .url-picker input[type=checkbox] { float:left; margin:5px 0 0; }
+  .url-picker label{ margin:0; }
+  
+  .url-picker .icon{ cursor:pointer; }
+    .url-picker a .icon{ text-decoration:none; }

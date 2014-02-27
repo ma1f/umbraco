@@ -1,0 +1,49 @@
+<div ng-controller="OpenGraphTags" class="umb-editor og-editor">
+  <table>
+    <tr ng-repeat="row in model.value">
+      <td>
+        <input type="text" ng-model="row.name" placeholder="name (ie. og:title)" required ng-change="sync()" />
+        <textarea ng-model="row.content" placeholder="content" required ng-change="sync()" rows="1"></textarea>
+      </td>
+      <td>
+        <!--<i class="icon icon-navigation handle"></i>-->
+        <i class="icon icon-delete red hover-show" ng-click="remove($index)"></i>
+      </td>
+    </tr>
+  </table>
+  <ul>
+    <li><a href prevent-default ng-click="add()"><i class="icon icon-add blue"></i> meta tag</a></li>
+    <li><a href prevent-default ng-click="addGoogleSnippet()"><i class="icon icon-add blue"></i> google snippet</a> <a href="https://developers.google.com/+/web/snippet/" target="_blank"><span class="icon icon-link"></span> documentation</a></li>
+    <li><a href prevent-default ng-click="addFacebookShare()"><i class="icon icon-add blue"></i> facebook share</a> <a href="https://developers.facebook.com/docs/opengraph/howtos/maximizing-distribution-media-content" target="_blank"><span class="icon icon-link"></span> documentation</a></li>
+    <li><a href prevent-default ng-click="addTwitterCard()"><i class="icon icon-add blue"></i> twitter card</a> <a href="https://dev.twitter.com/docs/cards" target="_blank"><span class="icon icon-link"></span> documentation</a></li>
+  </ul>
+  <i><small>Note: duplicate tags will not be added.</small></i>
+
+  <h5 ng-show="showgp()">g+ preview</h5>
+  <div class="og-gplus-preview" ng-show="showgp()">
+    <img src="{{tags['og:image']}}?width=120" />
+    <h6>{{tags['og:title']}}</h6>
+    <p>{{tags['og:description']}}</p>
+  </div>
+  <div class="clearfix"></div>
+
+  <h5 ng-show="showfb()">facebook share preview</h5>
+  <div class="og-fb-preview" ng-show="showfb()">
+    <img src="{{tags['og:image']}}?width=116&height=116&mode=crop" />
+    <div class="wrap clearfix">
+      <h6>{{tags['og:title']}}</h6>
+      <!--<p class="url"></p>-->
+      <p>{{tags['og:description']}}</p>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+
+  <h5 ng-show="showtc()">twitter summary card preview</h5>
+  <div class="og-tcard-preview" ng-show="showtc()">
+    <h6>{{tags['twitter:site']}}</h6>
+    <img src="{{tags['twitter:image']}}?width=120" />
+    <h6>{{tags['twitter:title']}}</h6>
+    <p>{{tags['twitter:description']}}</p>
+  </div>
+  <div class="clearfix"></div>
+</div>

@@ -1,0 +1,18 @@
+{
+  propertyEditors: [
+    {
+			alias: "OpenGraphTags",
+			name: "OpenGraph Tags",
+			editor: {
+				view: "~/App_Plugins/OpenGraphTags/opengraphtags.html",
+				valueType: "JSON"
+			}
+    },
+  ],
+  javascript: [
+      '~/App_Plugins/OpenGraphTags/opengraphtags.controller.js',
+  ],
+  css: [
+      '~/App_Plugins/OpenGraphTags/opengraphtags.css'
+  ]
+}

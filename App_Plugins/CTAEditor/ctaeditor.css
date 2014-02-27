@@ -1,0 +1,18 @@
+.cta-editor{}
+  .cta-editor table{ width:100%; }
+    .cta-editor tr{ border-bottom:1px solid #DBDBDB; }
+    .cta-editor td{ padding:10px; }
+    .cta-editor td:first-child{ width:140px; }
+
+  .cta-editor ul{ margin:0; }
+  .cta-editor li{ border:none; margin: 0 0 6px; }
+  .cta-editor li:last-child{ margin:0; }
+
+  .cta-editor input, .cta-editor textarea { display: block; }
+  .cta-editor input[type=checkbox] { float:left; margin:5px 0 0; }
+  .cta-editor textarea{ height:20px; width:90%; }
+  .cta-editor label{ margin:0; }
+  .cta-editor .cta-thumb{ width:120px; max-height:100px; }
+  
+  .cta-editor .icon{ cursor:pointer; }
+    .cta-editor a .icon{ text-decoration:none; }

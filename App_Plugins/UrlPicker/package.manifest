@@ -1,0 +1,18 @@
+{
+  propertyEditors: [
+    {
+			alias: "UrlPicker",
+			name: "Url Picker",
+			editor: {
+				view: "~/App_Plugins/UrlPicker/urlpicker.html",
+				valueType: "JSON"
+			}
+    },
+  ],
+  javascript: [
+      '~/App_Plugins/UrlPicker/urlpicker.controller.js',
+  ],
+  css: [
+      '~/App_Plugins/UrlPicker/urlpicker.css'
+  ]
+}

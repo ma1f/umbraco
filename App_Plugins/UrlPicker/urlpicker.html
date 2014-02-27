@@ -1,0 +1,24 @@
+<div ng-controller="UrlPicker" class="umb-editor url-picker">
+  <table>
+    <tr ng-model="model.value">
+      <td>
+        <input type="text" ng-model="model.value.title" placeholder="title" /></td>
+      <td>
+        <div ng-show="!model.value.isInternal">
+          <small>link to <a href ng-click="switch()" prevent-default>page</a> / <a href><u>external url</u></a></small>
+          <input type="text" ng-model="model.value.externalUrl" placeholder="http://" />
+        </div>
+        <div ng-show="model.value.isInternal">
+          <small>link to <a href><u>page</u></a> / <a href ng-click="switch()" prevent-default>external url</a></small><br />
+          <span ng-bind="model.value.internalName" ng-show="model.value.internalLink"></span>
+          <a href ng-click="removeContent()" ng-show="model.value.internalLink" prevent-default><i class="icon icon-delete"></i></a>
+          <a href ng-click="selectContent()" ng-show="!model.value.internalLink" prevent-default><i class="icon icon-out"></i>select page</a>
+        </div>
+      </td>
+      <td>
+        <input id="{{model.alias}}-newwindow" type="checkbox" ng-model="model.value.newWindow" />
+        <label for="{{model.alias}}-newwindow"><small>new window?</small></label></li>
+      </td>
+    </tr>
+  </table>
+</div>

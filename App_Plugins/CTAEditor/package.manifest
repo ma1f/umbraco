@@ -1,0 +1,18 @@
+{
+  propertyEditors: [
+    {
+			alias: "CTAEditor",
+			name: "CTAs Editor",
+			editor: {
+				view: "~/App_Plugins/CTAEditor/ctaeditor.html",
+				valueType: "JSON"
+			}
+    },
+  ],
+  javascript: [
+      '~/App_Plugins/CTAEditor/ctaeditor.controller.js',
+  ],
+  css: [
+      '~/App_Plugins/CTAEditor/ctaeditor.css'
+  ]
+}
