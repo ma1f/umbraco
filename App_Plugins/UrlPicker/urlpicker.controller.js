@@ -2,7 +2,7 @@ angular.module("umbraco")
     .controller("UrlPicker",
     function ($scope, dialogService) {
       if (!$scope.model.value)
-        $scope.model.value = { title: '', internalLink:0, internalLinkName: '', externalUrl: 'http://', isInternal: true, newWindow: false };
+        $scope.model.value = { title: '', internalLink:0, internalName: '', externalUrl: '', isInternal: true, newWindow: false };
 
       $scope.switch = function () {
         $scope.model.value.isInternal = !$scope.model.value.isInternal;
@@ -20,7 +20,7 @@ angular.module("umbraco")
       };
       $scope.removeContent = function () {
         $scope.model.value.internalLink = 0;
-        $scope.model.value.internalLinkName = '';
+        $scope.model.value.internalName = '';
       }
 
     });

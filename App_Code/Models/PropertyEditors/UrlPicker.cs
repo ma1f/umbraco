@@ -9,12 +9,12 @@ using Umbraco.Web.Models;
 namespace Models {
 
   public class UrlPicker {
-    public string Title{get;set;}
-    public int InternalLink{get;set;}
-    public string InternalLinkName{get;set;}
-    public string ExternalUrl{get;set;}
-    public bool IsInternal{get;set;}
-    public bool NewWindow{get;set;}
+    public string Title { get; set; }
+    public bool IsInternal { get; set; }
+    public int InternalLink { get; set; }
+    public string InternalName { get; set; }
+    public string ExternalUrl { get; set; }
+    public bool NewWindow { get; set; }
   }
 
 }
