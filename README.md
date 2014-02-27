@@ -11,18 +11,19 @@
 #### Open graph editor
 adding open graph tags to pages, handy if you want to stay up with the play in social media sharing of content.
 
-Usage
+**Usage**
 ```
 @foreach (var tag in Model.Content.GetJsonList<OpenGraphTag>("openGraphTags")) {
   <meta property="@tag.Name" content="@tag.Content" />
 }
 ```
+**Preview**
 ![ScreenShot](/opengrapheditor.png)
 
 #### Call to action editor
 For adding multiple 'promo' or 'call to action' blocks to a page, consisting of a thumbnail, heading, description and url
 
-Usage
+**Usage**
 ```
 @foreach (var cta in Model.Content.GetJsonList<CallToAction>("ctas")) {
   <a href="@(cta.IsInternal ? Umbraco.Url(cta.InternalLink) : cta.ExternalUrl)"@(cta.NewWindow ? "target=\"_blank\"" : "") class="cta">
@@ -32,18 +33,20 @@ Usage
   </a>
 }
 ```
+**Preview**
 ![ScreenShot](/cta-editor.png)
 
 #### Url Picker - for all your single url picking needs
 Sometimes you just need one url.
 
-Usage
+**Usage**
 ```
 @{
  var cta = Model.Content.GetJson<UrlPicker>("cta");
 }
 <a href="@(cta.IsInternal ? Umbraco.Url(cta.InternalLink, UrlProviderMode.Relative) : cta.ExternalUrl)" class="btn">@cta.Title</a>
 ```
+**Preview**
 ![ScreenShot](/url-picker.png)
 
 
