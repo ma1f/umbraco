@@ -1,11 +1,13 @@
 ## Reusable umbraco functionality
 
 ### Property Editors
-
-
+* Open Graph Editor
+* Call To Action Editor
+* Url Picker
 
 #### Open graph editor
 adding open graph tags to pages, handy if you want to stay up with the play in social media sharing of content.
+
 Usage
 ```
 @foreach (var tag in Model.Content.GetJsonList<OpenGraphTag>("openGraphTags")) {
@@ -16,6 +18,7 @@ Usage
 
 #### Call to action editor
 For adding multiple 'promo' or 'call to action' blocks to a page, consisting of a thumbnail, heading, description and url
+
 Usage
 ```
 @foreach (var cta in Model.Content.GetJsonList<CallToAction>("ctas")) {
@@ -30,6 +33,7 @@ Usage
 
 #### Url Picker - for all your single url picking needs
 Sometimes you just need one url.
+
 Usage
 ```
 @{
