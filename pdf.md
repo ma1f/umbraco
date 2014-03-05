@@ -6,7 +6,7 @@ https://code.google.com/p/wkhtmltopdf/
 
 ## Usage
 - install package
-- append '/pdf' to url, forces page to be rendered as pdf, auto download
+- append '/pdf' to url, forces page to be rendered using the pdf template, auto download
 - supports webfonts
 
 ### example
