@@ -8,3 +8,6 @@ https://code.google.com/p/wkhtmltopdf/
 - install package
 - append '/pdf' to url, forces page to be rendered as pdf, auto download
 - supports webfonts
+
+### example
+form generation - https://rawgithub.com/ma1f/umbraco/master/ApplicationForm_2013-05-17_F42069F1.pdf
