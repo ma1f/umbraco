@@ -15,6 +15,12 @@ namespace Models {
     public string InternalName { get; set; }
     public string ExternalUrl { get; set; }
     public bool NewWindow { get; set; }
+
+    public bool HasLink { 
+      get {
+        return (IsInternal && InternalLink != 0) || (!IsInternal && !string.IsNullOrEmpty(ExternalUrl));
+      }
+    }
   }
 
 }

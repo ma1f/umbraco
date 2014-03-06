@@ -27,7 +27,7 @@
           <li>
             <div ng-show="!row.isInternal">
               <small>link to <a href ng-click="switch(row)" prevent-default>page</a> / <a href><u>url</u></a></small>
-              <input type="text" ng-model="row.externalUrl" />
+              <input type="text" ng-model="row.externalUrl" placeholder="http://" />
             </div>
             <div ng-show="row.isInternal">
               <small>link to <a href><u>page</u></a> / <a href ng-click="switch(row)" prevent-default>url</a></small><br />

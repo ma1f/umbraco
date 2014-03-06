@@ -5,7 +5,7 @@ angular.module("umbraco")
         $scope.model.value = [];
 
       $scope.add = function () {
-        $scope.model.value.push({ image: null, heading: '', synopsis: '', internalLink: null, internalLinkName: '', externalUrl: 'http://', isInternal: true, newWindow: false });
+        $scope.model.value.push({ image: null, heading: '', description: '', internalLink:0, internalName: '', externalUrl: '', isInternal: true, newWindow: false });
       }
 
       $scope.remove = function (index) {
@@ -27,8 +27,8 @@ angular.module("umbraco")
         });
       };
       $scope.removeContent = function (cta) {
-        cta.internalLink = null;
-        cta.internalLinkName = '';
+        cta.internalLink = 0;
+        cta.internalName = '';
       }
 
       $scope.selectMedia = function (cta) {

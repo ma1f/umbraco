@@ -1,0 +1,28 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using Umbraco.Core
+@using Umbraco.Web
+@{
+    Layout = null;
+    string PDF_CONVERTER = Server.MapPath("/App_data/wkhtmltopdf/wkhtmltopdf.exe");
+    
+    var filename = Model.Content.UrlName + ".pdf";
+    var path = Server.MapPath("/App_Data/pdfs/" + filename);
+    var url = Request.Url.Scheme + "://" + Request.Url.Host + Model.Content.Url;
+    // Create directory if needed
+    var di = new DirectoryInfo(Path.GetDirectoryName(path));
+    if (!di.Exists){ di.Create(); }
+
+    // Connect to process
+    var process = new System.Diagnostics.Process();
+    process.StartInfo.FileName = PDF_CONVERTER;
+    process.StartInfo.Arguments = "-T 0 -R 0 -B 0 -L 0 --no-outline --disable-smart-shrinking " + url + " " + "\"" + path + "\"";
+    process.Start();
+    process.WaitForExit();
+
+    Response.Clear();
+    Response.AddHeader("content-disposition", "attachment; filename=" + filename);
+    Response.ContentType = "application/pdf";
+    Response.WriteFile(path);
+    Response.Flush();
+    Response.End();
+}
