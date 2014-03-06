@@ -1,5 +1,9 @@
 ## Reusable umbraco functionality
 
+### Packages
+* [Property Editors](http://our.umbraco.org/projects/backoffice-extensions/ctaopengraphurl-property-editors)
+* [Pdf generation](http://our.umbraco.org/projects/website-utilities/pdf-generation)
+
 ### Property Editors
 * [Open Graph Editor](/App_Plugins/OpenGraphTags)
 * [Call To Action Editor](/App_Plugins/CTAEditor)
